@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Donor Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <h1>BloodBridge - Donor Registration</h1>
+
+    <form method="POST" action="/register">
+
+        <label>Name:</label><br>
+        <input type="text" name="name" required>
+
+        <br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required>
+
+        <br><br>
+        <label>Password:</label><br>
+<input type="password" name="password" required>
+
+<br><br>
+
+        <label>Phone Number:</label><br>
+        <input type="text" name="phone" required>
+
+        <br><br>
+
+        <label>Blood Group:</label><br>
+        <select name="blood_group">
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+        </select>
+
+        <br><br>
+
+        <label>City:</label><br>
+        <input type="text" name="city" required>
+
+        <br><br>
+        <label>State:</label><br>
+<input type="text" name="state" required>
+
+<br><br>
+
+        <label>Available for Donation?</label><br>
+        <select name="availability">
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <br><br>
+
+        <label>Last Donation Date:</label><br>
+        <input type="date" name="last_donation_date">
+
+        <br><br>
+        <label>Gender:</label>
+
+<select name="gender">
+    <option value="Female">Female</option>
+    <option value="Male">Male</option>
+</select>
+
+
+<br><br>
+<label>Pulse:</label>
+<input type="text" name="pulse">
+
+<label>SpO₂:</label>
+<input type="text" name="spo2">
+
+<label>Blood Pressure:</label>
+<input type="text" name="bp">
+
+        <button type="submit">Register Donor</button>
+
+    </form>
+
+</body>
+</html>
