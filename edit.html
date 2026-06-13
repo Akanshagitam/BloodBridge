@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Donor</title>
+</head>
+<body>
+
+<h1>Edit Donor</h1>
+
+<form method="POST">
+
+    <input type="text" name="phone" value="{{ donor[3] }}">
+
+    <br><br>
+
+    <input type="text" name="city" value="{{ donor[5] }}">
+
+    <br><br>
+
+    <select name="availability">
+        <option>Yes</option>
+        <option>No</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit">Save Changes</button>
+
+</form>
+
+</body>
+</html>

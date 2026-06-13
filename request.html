@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emergency Request</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+{% include 'navbar.html' %}
+
+<h1>Emergency Blood Request</h1>
+
+<form method="POST">
+
+    <label>Patient Name:</label>
+    <input type="text" name="patient_name">
+
+    <br><br>
+
+    <label>Blood Group Needed:</label>
+    <input type="text" name="blood_group">
+
+    <br><br>
+
+    <label>City:</label>
+    <input type="text" name="city">
+
+    <br><br>
+    <label>State:</label>
+<input type="text" name="state">
+
+<br><br>
+
+    <button type="submit">Submit Request</button>
+
+</form>
+
+</body>
+</html>

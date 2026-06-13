@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="text-danger">🧠 AI Ranked Donors</h1>
+<p>Find the best matched donors instantly 🚑</p>
+
+<div class="row mt-4">
+
+{% for item in donors %}
+
+<div class="col-md-4 mb-3">
+
+    <div class="card shadow p-3">
+        <p>🧬 AI Eligibility: {{ item[3] }}</p>
+
+        {% if item[0][10] == "Female" %}
+            <h4>👩 {{ item[0][1] }}</h4>
+        {% else %}
+            <h4>👨 {{ item[0][1] }}</h4>
+        {% endif %}
+
+        <p>🩸 Blood Group: {{ item[0][5] }}</p>
+
+        <p>📍 City: {{ item[0][6] }}</p>
+
+        <p>📞 Phone: {{ item[0][4] }}</p>
+
+        <p>🟢 Availability: {{ item[0][8] }}</p>
+
+        <hr>
+
+        <p>🩺 Pulse: {{ item[0][12] }}</p>
+
+        <p>🫁 SpO₂: {{ item[0][13] }}</p>
+
+        <p>❤️ BP: {{ item[0][14] }}</p>
+
+        <hr>
+
+        <h5>🚀 Emergency Reach Index: {{ item[1] }}/100</h5>
+
+        <p>🤖 AI Health Risk: {{ item[2] }}</p>
+
+        <br>
+        {% if item[1] > 80 %}
+    <span style="color:red">🔥 HIGH PRIORITY DONOR</span>
+{% elif item[1] > 50 %}
+    <span style="color:orange">⚡ MEDIUM PRIORITY</span>
+{% else %}
+    <span style="color:green">🟢 LOW PRIORITY</span>
+{% endif %}
+
+        <a href="/edit/{{ item[0][0] }}">
+            <button>✏️ Edit</button>
+        </a>
+
+        <a href="/delete/{{ item[0][0] }}">
+            <button>🗑️ Delete</button>
+        </a>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}
